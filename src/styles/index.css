@@ -10,3 +10,15 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.task{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px;
+    padding: 5px;
+}
+
+.task button {
+    margin: 0px 10px;
+    width: 30px;
+}

@@ -18,7 +18,7 @@ const Home = () => {
 
 	const getAllCharacter = async () => {
 		try {
-			const response = await fetch(`${urlBase}/character`)
+			const response = await fetch(`${urlBase}/character`) // otro idioma
 			const data = await response.json()
 
 			setCharacter(data.results)
