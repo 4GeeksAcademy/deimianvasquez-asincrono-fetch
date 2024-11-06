@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import Navbar from "../component/Navbar.jsx";
+
 
 const initialTask = {
     label: "",
@@ -121,46 +123,49 @@ const Todos = () => {
 
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-12 col-md-7">
-                    <h1>Lista de tareas</h1>
-                    <form onSubmit={(event) => event.preventDefault()}>
-                        <input
-                            type="text"
-                            placeholder="Agrega la tarea"
-                            className="form-control"
-                            name="label"
-                            value={task.label}
-                            onChange={handleChange}
-                            onKeyDown={addTask}
-                        />
-                    </form>
-                    {
-                        taskList.length <= 0 ? <div> no tiene tareas</div> :
+        <>
 
-                            taskList.map((item) => (
-                                <div key={item.id} className="task">
-                                    {item.label}
-                                    <span>
-                                        <button onClick={() => deleteTask(item.id)}>X</button>
-                                        {/* <button onClick={() => editTask(item)}>E</button> */}
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-7">
+                        <h1>Lista de tareas</h1>
+                        <form onSubmit={(event) => event.preventDefault()}>
+                            <input
+                                type="text"
+                                placeholder="Agrega la tarea"
+                                className="form-control"
+                                name="label"
+                                value={task.label}
+                                onChange={handleChange}
+                                onKeyDown={addTask}
+                            />
+                        </form>
+                        {
+                            taskList.length <= 0 ? <div> no tiene tareas</div> :
 
-                                        <input
-                                            className="form-check-input mt-0"
-                                            type="checkbox"
-                                            aria-label="Checkbox for following text input"
-                                            checked={item.is_done}
-                                            onClick={() => editTask(item)}
+                                taskList.map((item) => (
+                                    <div key={item.id} className="task">
+                                        {item.label}
+                                        <span>
+                                            <button onClick={() => deleteTask(item.id)}>X</button>
+                                            {/* <button onClick={() => editTask(item)}>E</button> */}
 
-                                        />
-                                    </span>
-                                </div>
-                            ))
-                    }
+                                            <input
+                                                className="form-check-input mt-0"
+                                                type="checkbox"
+                                                aria-label="Checkbox for following text input"
+                                                checked={item.is_done}
+                                                onClick={() => editTask(item)}
+
+                                            />
+                                        </span>
+                                    </div>
+                                ))
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
