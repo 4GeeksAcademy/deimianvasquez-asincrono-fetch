@@ -37,9 +37,10 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? "nav-link text-danger" : "nav-link"} to="/todos">Todos</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "nav-link text-danger" : "nav-link"} to="/contact">Contact</NavLink> */}
                         {
-                            links.map((item) => {
+                            links.map((item, index) => {
                                 return (
                                     <NavLink
+                                        key={`navlink-${index}`}
                                         className={({ isActive }) => isActive ? "nav-link text-danger bg-green" : "nav-link"}
                                         to={`${item.href}`}>{item.name}</NavLink>
                                 )

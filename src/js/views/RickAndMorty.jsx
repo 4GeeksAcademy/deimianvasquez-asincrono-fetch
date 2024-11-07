@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 
+import Todos from "./Todos.jsx";
 
 const urlBase = "https://rickandmortyapi.com/api"
 
@@ -58,6 +59,7 @@ const RickAndMorty = () => {
 
                 </div>
             </div>
+            <Todos />
         </>
 
     );
