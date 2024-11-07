@@ -151,12 +151,10 @@ const Todos = () => {
                                             {/* <button onClick={() => editTask(item)}>E</button> */}
 
                                             <input
-                                                className="form-check-input mt-0"
                                                 type="checkbox"
-                                                aria-label="Checkbox for following text input"
                                                 checked={item.is_done}
-                                                onClick={() => editTask(item)}
-
+                                                onChange={() => editTask(item)}
+                                                className="form-check-input mt-0"
                                             />
                                         </span>
                                     </div>
